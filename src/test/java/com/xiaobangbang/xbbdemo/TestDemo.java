@@ -22,7 +22,7 @@ public class TestDemo {
         System.out.println(ii+" "+i+"aaaaa");
 
 
-        for (int j = 0; j < 10; j++) {
+        for (int j = 0,i1=0; j < 10; j++) {
              i++;
             System.out.println("aaa");
 
