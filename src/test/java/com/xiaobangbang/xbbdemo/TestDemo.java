@@ -23,8 +23,15 @@ public class TestDemo {
         System.out.println("删除");
 
 
+        for (int j = 0,i1=0; j < 10; j++) {
+             i++;
+            System.out.println("aaa");
+            System.out.println("master新提交");
+            System.out.println("YAZHUO提交");
+            System.out.println("YAZHUO第二此提交");
+            System.out.println("YAZHUO第三次提交");
 
 
 
     }
-}
+}}
