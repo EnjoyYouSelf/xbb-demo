@@ -18,14 +18,16 @@ public class TestDemo {
         Long ll = new Long(2147483647);
         int i = ll.intValue();
         int ii = Integer.parseInt(String.valueOf(ll));
-        System.out.println(ii+" "+i);
+        System.out.println(ii+" "+i+"aaaaa");
+        System.out.println(ii+" "+i+"aaaaa");
 
-        System.out.println("删除");
 
-
+        for (int j = 0; j < 10; j++) {
+             i++;
+            System.out.println("aaa");
 
 
 
 
     }
-}
+}}
