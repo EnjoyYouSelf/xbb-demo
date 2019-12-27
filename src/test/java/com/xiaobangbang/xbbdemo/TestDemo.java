@@ -26,5 +26,6 @@ public class TestDemo {
         System.out.println("master");
 
         System.out.println(new Date()+"master");
+        System.out.println("aaaa");
     }
 }
