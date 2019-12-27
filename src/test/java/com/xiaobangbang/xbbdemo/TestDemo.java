@@ -20,12 +20,6 @@ public class TestDemo {
         int ii = Integer.parseInt(String.valueOf(ll));
         System.out.println(ii+" "+i);
 
-        for (int j = 0; j < 10; j++) {
-             i++;
-
-        }
-        System.out.println("hehehe");
-        System.out.println("hahaha");
-
+        System.out.println("删除");
     }
 }
