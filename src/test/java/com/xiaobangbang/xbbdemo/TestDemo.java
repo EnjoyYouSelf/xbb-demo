@@ -28,8 +28,6 @@ public class TestDemo {
         System.out.println("PEI第三次提交");
 
 
-        System.out.println("master");
 
-        System.out.println(new Date()+"master");
     }
 }
