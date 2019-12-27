@@ -12,7 +12,7 @@ public class TestDemo {
 
     @Test
     public void testLinkHashMap(){
-        System.out.println("xxxx");
+        System.out.println("master添加");
         System.out.println((int)(new Date().getTime()/1000));
 
         Long ll = new Long(2147483647);
@@ -24,5 +24,8 @@ public class TestDemo {
              i++;
 
         }
+        System.out.println("hehehe");
+        System.out.println("hahaha");
+
     }
 }
