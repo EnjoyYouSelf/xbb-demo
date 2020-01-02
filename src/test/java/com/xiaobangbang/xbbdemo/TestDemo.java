@@ -21,12 +21,13 @@ public class TestDemo {
         System.out.println(ii+" "+i);
 
         System.out.println("master1");
+        System.out.println("dev/pei提交1");
         System.out.println("master2");
 
 
 
 
-
+        System.out.println("合并后做的修改");
     }
 
     @Test
