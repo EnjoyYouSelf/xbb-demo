@@ -18,10 +18,20 @@ public class TestDemo {
         Long ll = new Long(2147483647);
         int i = ll.intValue();
         int ii = Integer.parseInt(String.valueOf(ll));
-        System.out.println(ii+" "+i+"aaaaa");
-        System.out.println(ii+" "+i+"aaaaa");
+        System.out.println(ii+" "+i);
+
+        System.out.println("master1");
+
+
 
         System.out.println("dev/pei提交1");
+    }
+
+    @Test
+    public void testDate(){
 
 
-}}
+    }
+
+
+}
