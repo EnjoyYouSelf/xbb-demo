@@ -1,13 +1,13 @@
-package com.xiaobangbang.xbbdemo;
+package com.xiaobangbang.demo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class XbbDemoApplication {
+public class DemoApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(XbbDemoApplication.class, args);
+        SpringApplication.run(DemoApplication.class, args);
     }
 
 }

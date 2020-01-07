@@ -1,4 +1,4 @@
-package com.xiaobangbang.xbbdemo;
+package com.xiaobangbang.demo;
 
 import org.assertj.core.util.Arrays;
 import org.junit.Assert;

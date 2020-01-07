@@ -1,4 +1,4 @@
-package com.xiaobangbang.xbbdemo.entity;
+package com.xiaobangbang.demo.entity;
 
 /**
  * @author peyazhuo

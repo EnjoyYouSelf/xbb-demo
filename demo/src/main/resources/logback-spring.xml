@@ -2,7 +2,7 @@
 <!-- Logback 把日志进行分级分开来打以后方便进行日志排除错误 -->
 <configuration scan="true" scanPeriod="1 minutes">
 
-	<property name="NORMAL_MESSAGE_PATTERN" value="[%d{yyyy-MM-dd HH:mm:ss}][%p][%t]- %c{80} :%m%n" />
+	<property name="NORMAL_MESSAGE_PATTERN" value="[%d{HH:mm:ss}][%p][%t]- %c{80} :%m%n" />
 	<property name="SIMPLE_MESSAGE_PATTERN" value="[%d][%p][%t]- %c{80} :%m%n" />
 	<!-- 日志根目录 -->
 	<property name="LOG_ROOT_PATH" value="/acs/log/pro-web-pc" />
@@ -73,13 +73,13 @@
 	</appender>
 
 
-	<logger name="com.ibatis" additivity="true">
-	  <level value="debug" />
-	 </logger>
+<!--	<logger name="com.ibatis" additivity="true">-->
+<!--	  <level value="debug" />-->
+<!--	</logger>-->
 	 
-	 <logger name="java.sql.Connection" additivity="true">
-	  <level value="debug" />
-	 </logger>
+<!--	 <logger name="java.sql.Connection" additivity="true">-->
+<!--	  <level value="debug" />-->
+<!--	 </logger>-->
 	 
 	 <logger name="java.sql.Statement" additivity="true">
 	  <level value="debug" />

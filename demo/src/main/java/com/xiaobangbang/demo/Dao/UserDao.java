@@ -1,4 +1,4 @@
-package com.xiaobangbang.xbbdemo.Dao;
+package com.xiaobangbang.demo.Dao;
 
 /**
  * @author peyazhuo
