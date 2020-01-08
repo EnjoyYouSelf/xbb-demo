@@ -1,0 +1,9 @@
+server:
+  port: 8989
+spring:
+  profiles:
+    include: rabbitmq-producer
+    active: pc-demo
+logging:
+  level:
+    root: debug

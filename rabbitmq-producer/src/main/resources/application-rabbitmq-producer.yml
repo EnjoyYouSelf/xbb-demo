@@ -1,0 +1,22 @@
+
+spring:
+  cloud:
+    stream:
+      bindings:
+        # 用户通道
+        userOutput:
+          destination: crm
+          binder: defaultRabbit
+          group: hehe
+      binders:
+        defaultRabbit:
+          type: rabbit
+          environment:
+            spring:
+              rabbitmq:
+                username: test
+                password: 123456
+                host: 192.168.10.22
+                port: 5672
+                virtual-host: /
+          default-binder: defaultRabbit

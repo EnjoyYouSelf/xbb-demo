@@ -1,16 +1,13 @@
-package com.xiaobangbang.rabbitmq;
+package com.xiaobangbang.pcdemo;
 
 import org.junit.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class RabbitmqApplicationTests {
+class PcDemoApplicationTests {
 
     @Test
     void contextLoads() {
-
-
-
     }
 
 }

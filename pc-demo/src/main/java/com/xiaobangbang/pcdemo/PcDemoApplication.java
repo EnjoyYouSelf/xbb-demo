@@ -1,14 +1,13 @@
-package com.xiaobangbang.rabbitmq;
+package com.xiaobangbang.pcdemo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class RabbitmqApplication {
+public class PcDemoApplication {
 
     public static void main(String[] args) {
-
-        SpringApplication.run(RabbitmqApplication.class, args);
+        SpringApplication.run(PcDemoApplication.class, args);
     }
 
 }

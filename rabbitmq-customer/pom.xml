@@ -5,14 +5,12 @@
     <parent>
         <artifactId>xbb-demo</artifactId>
         <groupId>com.xiaobangbang</groupId>
-        <version>0.0.1-SNAPSHOT</version>
+        <version>1.0</version>
     </parent>
-    <artifactId>rabbitmq</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <name>rabbitmq</name>
-    <description>rabbitMq for Xbb </description>
-
-
+    <artifactId>rabbitmq-customer</artifactId>
+    <version>1.0</version>
+    <name>rabbitmq-customer</name>
+    <description>rabbitmq-customer for Xbb</description>
 
     <properties>
         <java.version>1.8</java.version>
@@ -20,35 +18,25 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.xiaobangbang</groupId>
-            <artifactId>config</artifactId>
-            <version>1.0</version>
-        </dependency>
-        <!-- 测试类jar 含junit SpringRunner SpringBootTest -->
-        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>com.xiaobangbang</groupId>
-            <artifactId>rabbitmq-producer</artifactId>
+            <artifactId>config</artifactId>
             <version>1.0</version>
         </dependency>
+        <!-- rabbitMq-->
         <dependency>
-            <groupId>com.xiaobangbang</groupId>
-            <artifactId>rabbitmq-customer</artifactId>
-            <version>1.0</version>
-            <scope>compile</scope>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-stream-rabbit</artifactId>
+            <version>2.0.2.RELEASE</version>
         </dependency>
     </dependencies>
 
     <build>
         <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>

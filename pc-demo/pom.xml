@@ -5,42 +5,67 @@
     <parent>
         <artifactId>xbb-demo</artifactId>
         <groupId>com.xiaobangbang</groupId>
-        <version>0.0.1-SNAPSHOT</version>
+        <version>1.0</version>
     </parent>
-    <artifactId>rabbitmq</artifactId>
+    <artifactId>pc-demo</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>rabbitmq</name>
-    <description>rabbitMq for Xbb </description>
-
-
-
+    <name>pc-demo</name>
+    <description>pc-demo for Spring Boot</description>
+    <packaging>jar</packaging>
     <properties>
         <java.version>1.8</java.version>
     </properties>
 
     <dependencies>
         <dependency>
-            <groupId>com.xiaobangbang</groupId>
-            <artifactId>config</artifactId>
-            <version>1.0</version>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
         </dependency>
-        <!-- 测试类jar 含junit SpringRunner SpringBootTest -->
+        <!-- 测试类jar -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.assertj/assertj-core -->
+        <dependency>
+            <groupId>org.assertj</groupId>
+            <artifactId>assertj-core</artifactId>
+            <version>3.14.0</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.xiaobangbang</groupId>
+            <artifactId>config</artifactId>
+            <version>1.0</version>
+        </dependency>
+
+        <!--日志依赖-->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${slf4j.version}</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-core</artifactId>
+            <version>${logback.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>${logback.version}</version>
         </dependency>
         <dependency>
             <groupId>com.xiaobangbang</groupId>
             <artifactId>rabbitmq-producer</artifactId>
             <version>1.0</version>
         </dependency>
-        <dependency>
-            <groupId>com.xiaobangbang</groupId>
-            <artifactId>rabbitmq-customer</artifactId>
-            <version>1.0</version>
-            <scope>compile</scope>
-        </dependency>
+
+
     </dependencies>
 
     <build>
@@ -52,7 +77,6 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.21.0</version>
                 <configuration>
                     <skipTests>true</skipTests>
                 </configuration>

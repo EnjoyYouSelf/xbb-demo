@@ -1,0 +1,6 @@
+server:
+  port: 8985
+
+spring:
+  profiles:
+    include: rabbitmq-customer
