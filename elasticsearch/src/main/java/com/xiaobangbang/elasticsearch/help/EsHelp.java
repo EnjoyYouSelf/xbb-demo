@@ -6,6 +6,8 @@ import org.apache.http.auth.UsernamePasswordCredentials;
 import org.apache.http.client.CredentialsProvider;
 import org.apache.http.impl.client.BasicCredentialsProvider;
 import org.apache.http.impl.nio.reactor.IOReactorConfig;
+import org.elasticsearch.action.get.GetRequest;
+import org.elasticsearch.action.get.GetResponse;
 import org.elasticsearch.action.search.SearchRequest;
 import org.elasticsearch.action.search.SearchResponse;
 import org.elasticsearch.action.update.UpdateRequest;
@@ -30,13 +32,20 @@ import java.util.HashMap;
  */
 @Configuration
 public class EsHelp {
+    private String esIp = "192.168.10.18";
 
+    private int prot = 9200;
+
+    private String type = "http";
+
+    private String username = "elastic";
+    private String password = "ZVVVWMUxycFHLXGvJrV8";
 
 
     @Bean
     public RestClient getRestClient(){
         //设置httpHost
-        HttpHost httpHost = new HttpHost("192.168.10.18", 9200, "http");
+        HttpHost httpHost = new HttpHost(esIp, prot, type);
         //获取RestClientBuilder
         RestClientBuilder restClientBuilder = RestClient.builder(httpHost);
         //连接时间   参照 AbstractHttpTransport
@@ -53,7 +62,7 @@ public class EsHelp {
         //设置连接用户名密码
         final CredentialsProvider credentialsProvider = new BasicCredentialsProvider();
         credentialsProvider.setCredentials(AuthScope.ANY,
-                new UsernamePasswordCredentials("elastic", "ZVVVWMUxycFHLXGvJrV8"));
+                new UsernamePasswordCredentials(username, password));
         restClientBuilder.setHttpClientConfigCallback(httpClientBuilder -> httpClientBuilder
                 //是整个连接池的大小   AbstractHttpTransport  1000 （默认30，暂时设置成数据库连接池一致50）
                 .setMaxConnTotal(10000)
@@ -70,7 +79,7 @@ public class EsHelp {
         return new RestHighLevelClient(getRestClient());
     }
 
-    public void searchForPage() throws IOException {
+    public void searchForPage() {
         //创建searchRequest(请求头),设置index和types
         SearchRequest request = new SearchRequest("idx_saas_product");
         request.types("saas_product");
@@ -94,7 +103,12 @@ public class EsHelp {
         System.out.println("bulider:  "+builder.toString());
         System.out.println(request);
         RestHighLevelClient restHighLevelClient = new RestHighLevelClient(getRestClient());
-        SearchResponse response = restHighLevelClient.search(request);
+        SearchResponse response = null;
+        try {
+            response = restHighLevelClient.search(request);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         System.out.println("----------------------");
         System.out.println("----------------------");
         System.out.println(response.toString());
@@ -105,16 +119,34 @@ public class EsHelp {
         UpdateRequest request = new UpdateRequest("idx_saas_product", "saas_product", "1_37");
         HashMap<String, Object> jsonMap = new HashMap<>();
         jsonMap.put("data.text_1","嘿哈嘿哈");
+        request.doc(jsonMap);
         try {
             UpdateResponse updateResponse = getRestHighLevelClient().update(request);
             System.out.println("=====================");
             System.out.println("=====================");
+            System.out.println(request.toString());
             System.out.println(updateResponse);
+            //UpdateResponse[index=idx_saas_product,type=saas_product,id=1_37,version=2,result=updated,shards=ShardInfo{total=2, successful=2, failures=[]}]
         } catch (IOException e) {
             System.out.println("修改失败");
         }
     }
+    //获取单个文档
+    public void getOneDoc(){
+        GetRequest getRequest = new GetRequest("idx_saas_product", "saas_product", "1_37");
+        getRequest.routing("1_37");
+        try {
+            GetResponse response = getRestHighLevelClient().get(getRequest);
+            System.out.println("=====================");
+            System.out.println("=====================");
+            System.out.println(getRequest.toString());
+            System.out.println(response);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
+
+    }
 
 
 

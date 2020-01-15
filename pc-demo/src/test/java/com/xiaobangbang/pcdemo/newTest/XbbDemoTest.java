@@ -11,7 +11,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import javax.annotation.Resource;
-import java.io.IOException;
 
 /**
  * @author peyazhuo
@@ -41,11 +40,8 @@ public class XbbDemoTest {
 
     @Test
     public void testEs(){
-        try {
-            esHelp.searchForPage();
-        } catch (IOException e) {
-            System.out.println("==============出错=============");
-        }
+        //esHelp.searchForPage();
+        esHelp.getOneDoc();
 
 
     }

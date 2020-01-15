@@ -4,6 +4,11 @@ spring:
   profiles:
     include: rabbitmq-producer
     active: local
+  application:
+    name: aaaaa
 logging:
   level:
     root: debug
+yaml:
+  str: fasdf
+  num: 10.555

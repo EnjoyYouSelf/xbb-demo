@@ -1,5 +1,6 @@
 package com.xiaobangbang.pcdemo.config;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.stereotype.Component;
 
@@ -16,7 +17,7 @@ public class TestConfigXxx {
     @Resource
     private TestConfig testConfig;
 
-    /*@Value("${spring.application.name}")
+    @Value("${spring.application.name}")
     private String appName;
     @Value("${yaml.str}")
     private String str2;
@@ -26,7 +27,7 @@ public class TestConfigXxx {
     public void soutConfig(){
         System.out.println(testConfig.getStr()+"  "+testConfig.getNum());
         System.out.println(appName+"  "+str2+" "+num2);
-    }*/
+    }
 
     public TestConfigXxx() {
     }
