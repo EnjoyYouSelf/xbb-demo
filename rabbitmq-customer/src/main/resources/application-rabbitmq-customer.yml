@@ -5,9 +5,13 @@ spring:
       bindings:
         # 用户通道 userInput为bindings包下
         userInput:
-          destination: crm
+          destination: crmDemo
           binder: defaultRabbit
           group: hehe
+        testInput:
+          destination: crmTest
+          binder: defaultRabbit
+          group: haha
       binders:
         defaultRabbit:
           type: rabbit
@@ -20,3 +24,8 @@ spring:
                 port: 5672
                 virtual-host: /
           default-binder: defaultRabbit
+      rabbit:
+        bindings:
+          userInput:
+            consumer:
+              bindingRoutingKey: demo

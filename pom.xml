@@ -21,9 +21,12 @@
     </properties>
     <modules>
         <module>config</module>
+        <module>pojo</module>
         <module>rabbitmq</module>
         <module>rabbitmq-customer</module>
         <module>rabbitmq-producer</module>
+        <module>elasticsearch</module>
+        <module>service-main</module>
         <module>pc-demo</module>
     </modules>
 

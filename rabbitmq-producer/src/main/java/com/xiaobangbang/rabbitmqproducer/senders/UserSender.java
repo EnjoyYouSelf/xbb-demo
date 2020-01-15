@@ -1,6 +1,7 @@
 package com.xiaobangbang.rabbitmqproducer.senders;
 
 import com.xiaobangbang.rabbitmqproducer.bindings.UserOutputBinding;
+import com.xiaobangbnag.pojo.dto.MessageDTO;
 import org.springframework.cloud.stream.annotation.EnableBinding;
 import org.springframework.messaging.Message;
 import org.springframework.messaging.MessageHeaders;
@@ -20,13 +21,13 @@ public class UserSender{
     @Resource
     private UserOutputBinding userOutputBinding;
 
-    public boolean sendMessage(Object messageBody, Map<String,Object> messageHeader){
+    public boolean sendMessage(MessageDTO messageBody, Map<String,Object> messageHeader){
         //设置请求头map类型 请求体：自定义类
         MessageHeaders mhs = new MessageHeaders(messageHeader);
-        //MessageHeaderAccessor messageHeaderAccessor = new MessageHeaderAccessor();
         //发送请求信息
-        Message<Object> message = MessageBuilder.createMessage(messageBody, mhs);
-        boolean sendStatus = userOutputBinding.userOutput().send(message);
+        MessageBuilder<MessageDTO> builder = MessageBuilder.withPayload(messageBody).copyHeaders(messageHeader);
+        Message message = builder.build();
+        boolean sendStatus = userOutputBinding.testOutput().send(message);
         return sendStatus;
     }
 

@@ -1,12 +1,14 @@
 package com.xiaobangbang.rabbitmqcustomer.receiver;
 
 import com.xiaobangbang.rabbitmqcustomer.bindings.UserInputBinding;
-import org.springframework.amqp.core.Message;
-import org.springframework.amqp.core.MessageProperties;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.xiaobangbnag.pojo.dto.MessageDTO;
 import org.springframework.cloud.stream.annotation.EnableBinding;
 import org.springframework.cloud.stream.annotation.StreamListener;
+import org.springframework.messaging.Message;
+import org.springframework.messaging.MessageHeaders;
 import org.springframework.stereotype.Service;
+
+import javax.annotation.Resource;
 
 /**
  * @author peyazhuo
@@ -16,18 +18,23 @@ import org.springframework.stereotype.Service;
 @Service("userReceiver")
 public class UserReceiver {
 
-    @Autowired
+    @Resource
     private UserInputBinding userInputBinding;
 
 
-    @StreamListener(UserInputBinding.IN_OUT_CHANNEL)
+    @StreamListener(value = UserInputBinding.IN_OUT_CHANNEL)
     public void userRevice(Message message){
-        MessageProperties messageProperties = message.getMessageProperties();
-        System.out.println(messageProperties.getHeaders());
-
+        MessageHeaders headers = message.getHeaders();
+        System.out.println(headers);
         System.out.println(message);
+    }
 
-
+    @StreamListener(value = UserInputBinding.TEST_CHANNEL)
+    public void userRevice2(Message<MessageDTO> message){
+        MessageHeaders headers = message.getHeaders();
+        System.out.println("============================");
+        System.out.println(headers);
+        System.out.println(message.getPayload().toString());
     }
 
 }

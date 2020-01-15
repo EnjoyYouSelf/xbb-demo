@@ -1,0 +1,9 @@
+server:
+  port: 8984
+spring:
+  profiles:
+    include: rabbitmq-producer
+    active: local
+logging:
+  level:
+    root: debug

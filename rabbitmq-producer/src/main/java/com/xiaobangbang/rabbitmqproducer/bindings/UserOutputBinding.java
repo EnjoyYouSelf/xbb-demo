@@ -11,7 +11,12 @@ import org.springframework.stereotype.Service;
 @Service("userOutputBinding")
 public interface UserOutputBinding {
     String OUT_PUT_CHANNEL = "userOutput";
+    String TEST_CHANNEL = "testOutput";
+
 
     @Output(UserOutputBinding.OUT_PUT_CHANNEL)
     MessageChannel userOutput();
+
+    @Output(UserOutputBinding.TEST_CHANNEL)
+    MessageChannel testOutput();
 }

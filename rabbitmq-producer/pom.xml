@@ -18,6 +18,7 @@
             <artifactId>config</artifactId>
             <version>1.0</version>
         </dependency>
+
         <!-- 测试类jar -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -29,6 +30,11 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-stream-rabbit</artifactId>
             <version>2.0.2.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>com.xiaobangbnag</groupId>
+            <artifactId>pojo</artifactId>
+            <version>1.0</version>
         </dependency>
     </dependencies>
 

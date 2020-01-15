@@ -1,0 +1,13 @@
+server:
+  port: 8980
+spring:
+  profiles:
+    include: rabbitmq-producer
+    active: dev
+  data:
+      elasticsearch:
+        cluster-nodes: 192.168.10.18:9300,192.168.10.17:9300,192.168.10.19:9300
+        cluster-name: my-application
+        xpack.user: elastic
+        xpack.password: ZVVVWMUxycFHLXGvJrV8
+

@@ -1,5 +1,0 @@
-server:
-  port: 8987
-spring:
-  profiles:
-    include: rabbitmq-producer

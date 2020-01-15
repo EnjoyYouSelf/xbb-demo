@@ -96,11 +96,14 @@
 <!--	 <logger name="org.apache.http" additivity="true">-->
 <!--		 <level value="info" />-->
 <!--	 </logger>-->
+	<logger name="com.xiaobangbang.pcdemo">
+		<level value="info" />
+	</logger>
 
 	<root>
-		<level value="debug" />
+		<level value="debug"/>
 		<!-- 本地输出到控制台 -->
-		<springProfile name="local">
+		<springProfile name="dev">
 			<appender-ref ref="DEFAULT-CONSOLE" />
 		</springProfile>
 

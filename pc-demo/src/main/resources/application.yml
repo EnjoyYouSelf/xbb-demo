@@ -1,9 +1,9 @@
-server:
-  port: 8989
 spring:
   profiles:
     include: rabbitmq-producer
-    active: pc-demo
-logging:
-  level:
-    root: debug
+    active: dev
+  application:
+    name: xbbDemo
+yaml:
+  num: 1.22
+  str: asdfa
